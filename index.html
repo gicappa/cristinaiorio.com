@@ -17,8 +17,8 @@
     "@type": "Person",
     "name": "Cristina Iorio",
     "jobTitle": "Psicologa Psicoterapeuta",
-    "image": "./cristina_iorio_profile.jpg", // Path updated to be relative
-    "url": "https://cristinaiorio.com", // e.g., https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
+    "image": "./cristina_iorio_profile.jpg",
+    "url": "https://cristinaiorio.com",
     "telephone": "+393478035515",
     "address": {
       "@type": "PostalAddress",
@@ -27,7 +27,7 @@
       "postalCode": "21013",
       "addressCountry": "IT"
     },
-    "alumniOf": "REPLACE_WITH_UNIVERSITY_INFO", // Placeholder: Update with actual info
+    "alumniOf": "REPLACE_WITH_UNIVERSITY_INFO",
     "worksFor": {
       "@type": "LocalBusiness",
       "name": "Studio Psicologia Cristina Iorio",
@@ -64,7 +64,7 @@
         }
       ],
       "sameAs": [
-        "REPLACE_WITH_LINKEDIN_URL_IF_ANY" // Placeholder: Update with actual LinkedIn URL or remove
+        "REPLACE_WITH_LINKEDIN_URL_IF_ANY"
       ]
     }
   }
@@ -77,13 +77,11 @@
       -moz-osx-font-smoothing: grayscale;
     }
     .brand-claim {
-        font-family: 'Brush Script MT', 'Brush Script Std', cursive; /* Fallback to generic cursive */
-        font-size: 1.75rem; /* Equivalent to text-2xl or text-3xl */
-        font-weight: normal; /* Script fonts usually don't need bolding */
+        font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+        font-size: 1.75rem;
+        font-weight: normal;
     }
-     /* Ensure Poppins applies to headings naturally by removing specific overrides */
     h1, h2, h3, h4, h5, h6 {
-        /* font-family can be inherited from body or set explicitly if needed for different heading font */
     }
   </style>
 <script type="importmap">
@@ -95,11 +93,11 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+<link rel="stylesheet" href="./index.css">
 </head>
 <body class="bg-slate-50 text-slate-700">
   <div id="root"></div>
-  <script type="module" src="./index.js"></script> {/* Changed from /index.tsx to ./index.js */}
-<script type="module" src="/index.tsx"></script>
+  <!-- Fix: Use only one script reference to index.tsx -->
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
