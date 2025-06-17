@@ -19,25 +19,6 @@ html {
   animation: fadeIn 1s ease forwards;
 }
 
-/* Image hover effects */
-.hover-scale {
-  transition: transform 0.3s ease;
-}
-
-.hover-scale:hover {
-  transform: scale(1.02);
-}
-
-/* Card hover effects */
-.card-transition {
-  transition: all 0.3s ease;
-}
-
-.card-transition:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
 /* Custom gradient backgrounds */
 .bg-gradient-gentle {
   background: linear-gradient(135deg, #f0f9ff 0%, #e6f0f9 100%);

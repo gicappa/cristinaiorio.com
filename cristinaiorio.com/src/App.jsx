@@ -170,6 +170,7 @@ export default function App() {
                   title="Studio Cristina Iorio"
                   width="100%"
                   height="100%"
+                  style={{ minHeight: "300px" }}
                   frameBorder="0"
                   scrolling="no"
                   marginHeight="0"
