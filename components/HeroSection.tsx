@@ -31,7 +31,7 @@ const HeroSection: React.FC<SectionProps> = ({ id }) => {
           "{AppConfig.claim}"
         </p>
 
-        <p className={`max-w-2xl mx-auto text-lg text-${AppConfig.colors.textSecondary} mb-8`}>
+        {/* <p className={`max-w-2xl mx-auto text-lg text-${AppConfig.colors.textSecondary} mb-8`}>
           Benvenuti nel mio spazio dedicato al benessere psicologico. Offro supporto e consulenza psicologica per affrontare momenti di difficoltà, migliorare la consapevolezza di sé e promuovere una crescita personale autentica. Insieme possiamo esplorare percorsi per ritrovare equilibrio e serenità.
         </p>
         <p className={`max-w-3xl mx-auto text-sm text-slate-500 mb-8`}>
@@ -42,7 +42,7 @@ const HeroSection: React.FC<SectionProps> = ({ id }) => {
           className={`bg-${AppConfig.colors.primary} text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-${AppConfig.colors.primaryHover} transition duration-300 text-lg`}
         >
           Contattami
-        </a>
+        </a> */}
       </div>
     </section>
   );

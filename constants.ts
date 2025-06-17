@@ -21,12 +21,12 @@ export const AppConfig = {
   ],
   navLinks: [
     { label: "Home", href: "#home" },
-    { label: "Servizi", href: "#servizi" },
-    { label: "Biografia", href: "#biografia" },
+    // { label: "Servizi", href: "#servizi" },
+    // { label: "Biografia", href: "#biografia" },
     // { label: "Testimonianze", href: "#testimonianze"}, // Removed
     // { label: "Blog", href: "#blog"}, // Removed
-    { label: "FAQ", href: "#faq"},
-    { label: "Contatti", href: "#contatti" },
+    // { label: "FAQ", href: "#faq"},
+    // { label: "Contatti", href: "#contatti" },
   ] as NavItem[],
   colors: { 
     primary: 'red-700',        
