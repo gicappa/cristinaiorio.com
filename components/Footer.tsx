@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           &copy; {new Date().getFullYear()} {AppConfig.professionalName}. Tutti i diritti riservati.
         </p>
         <p className="mb-2 text-sm">
-          Studio: {AppConfig.contact.address} | P.IVA: [Inserire Partita IVA]
+          Studio: {AppConfig.contact.address} | P.IVA: {AppConfig.contact.piva}
         </p>
         <p className={`brand-claim text-lg text-${AppConfig.colors.primaryLight} mb-4`}>
           "{AppConfig.claim}"
