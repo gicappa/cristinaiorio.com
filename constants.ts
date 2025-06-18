@@ -9,7 +9,7 @@ export const AppConfig = {
   profession: "Psicologa Psicoterapeuta",
   claim: "La mente in continuo movimento",
   contact: {
-    address: "Vicolo Degli Orti 1, 21013 Gallarate (VA), Italia",
+    address: "Vicolo Degli Orti 2, 21013 Gallarate (VA), Italia",
     phone: "+39 347 8035515",
     email: "cristinaiorio@tiscali.it", 
     mapEmbedUrl: "https://maps.google.com/maps?q=Vicolo%20Degli%20Orti%201%2C%2021013%20Gallarate%20VA%2C%20Italy&t=&z=17&ie=UTF8&iwloc=&output=embed"
