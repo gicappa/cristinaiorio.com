@@ -7,12 +7,12 @@ import { CheckCircleIcon } from './icons.js'; // Added .js extension
 const services = [
   {
     title: "Consulenza e Supporto Psicologico Individuale",
-    description: "Percorsi di ascolto e accompagnamento per adulti e adolescenti che stanno attraversando disagi emotivi, relazionali o momenti di disorientamento.Obiettivo: comprendere meglio sé stessi, trovare nuove risorse, favorire il benessere quotidiano.",
+    description: "Percorsi di ascolto e accompagnamento per adulti e adolescenti che stanno attraversando disagi emotivi, relazionali o momenti di disorientamento. Obiettivo: comprendere meglio sé stessi, trovare nuove risorse, favorire il benessere quotidiano.",
     keywords: ["consulenza psicologica", "supporto emotivo", "adolescenza", "relazioni"]
   },
   {
     title: "Psicoterapia",
-    description: "Interventi mirati per affrontare difficoltà più profonde e strutturate (come disturbi del comportamento alimentare e disturbi psicosomatici), con un approccio integrato e basato sull’evidenza.La psicoterapia permette di lavorare su ferite emotive, schemi disfunzionali e vissuti radicati, promuovendo un cambiamento autentico e duraturo.",
+    description: "Interventi mirati per affrontare difficoltà più profonde e strutturate (come disturbi del comportamento alimentare e disturbi psicosomatici), con un approccio integrato e basato sull’evidenza .La psicoterapia permette di lavorare su ferite emotive, schemi disfunzionali e vissuti radicati, promuovendo un cambiamento autentico e duraturo.",
     keywords: ["psicoterapia", "gpercorso terapeutico", "cambiamento", "consapevolezza"]
   },
   {
