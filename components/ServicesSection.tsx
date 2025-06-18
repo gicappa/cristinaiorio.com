@@ -7,33 +7,48 @@ import { CheckCircleIcon } from './icons.js'; // Added .js extension
 const services = [
   {
     title: "Consulenza e Supporto Psicologico Individuale",
-    description: "Percorsi personalizzati per adulti e adolescenti volti a comprendere e superare disagi emotivi, relazionali o esistenziali.",
-    keywords: ["terapia individuale", "supporto psicologico"]
-  },
-  {
-    title: "Gestione dell'Ansia e dello Stress",
-    description: "Strategie e tecniche per riconoscere, affrontare e ridurre l'impatto di ansia, attacchi di panico e stress cronico sulla vita quotidiana.",
-    keywords: ["ansia", "gestione dello stress"]
-  },
-  {
-    title: "Trattamento dei Disturbi dell'Umore",
-    description: "Supporto specializzato per affrontare depressione, distimia e altre difficoltà legate all'umore, promuovendo il recupero del benessere.",
-    keywords: ["depressione", "disturbi dell'umore"]
-  },
-  {
-    title: "Sostegno alla Crescita Personale",
-    description: "Percorsi mirati a sviluppare l'autostima, migliorare le capacità comunicative e relazionali, e raggiungere i propri obiettivi personali e professionali.",
-    keywords: ["crescita personale", "autostima"]
-  },
-  {
-    title: "Supporto nelle Fasi di Cambiamento",
-    description: "Accompagnamento psicologico durante periodi di transizione significativi come lutti, separazioni, cambiamenti lavorativi o nuove fasi della vita.",
-    keywords: ["cambiamento", "lutto", "separazione"]
+    description: "Percorsi di ascolto e accompagnamento per adulti e adolescenti che stanno attraversando disagi emotivi, relazionali o momenti di disorientamento.Obiettivo: comprendere meglio sé stessi, trovare nuove risorse, favorire il benessere quotidiano.",
+    keywords: ["consulenza psicologica", "supporto emotivo", "adolescenza", "relazioni"]
   },
   {
     title: "Psicoterapia",
-    description: "Interventi psicoterapeutici mirati per affrontare problematiche più profonde e strutturate, utilizzando approcci basati sull'evidenza scientifica.",
-    keywords: ["psicoterapeuta Gallarate", "psicoterapia"]
+    description: "Interventi mirati per affrontare difficoltà più profonde e strutturate (come disturbi del comportamento alimentare e disturbi psicosomatici), con un approccio integrato e basato sull’evidenza.La psicoterapia permette di lavorare su ferite emotive, schemi disfunzionali e vissuti radicati, promuovendo un cambiamento autentico e duraturo.",
+    keywords: ["psicoterapia", "gpercorso terapeutico", "cambiamento", "consapevolezza"]
+  },
+  {
+    title: "EMDR – Elaborazione dei Traumi",
+    description: "Approccio terapeutico riconosciuto a livello internazionale per il trattamento di traumi psicologici, esperienze dolorose o eventi critici che continuano a influenzare il presente. L’EMDR favorisce un’elaborazione profonda, aiutando a sciogliere blocchi emotivi e a ritrovare stabilità.",
+    keywords: ["EMDR", "trauma", "elaborazione", "esperienze traumatiche"]
+  },
+  {
+    title: "Mindfulness e Consapevolezza",
+    description: "Utilizzo di pratiche di mindfulness a scopo clinico per migliorare la gestione dello stress, la regolazione emotiva e la presenza nel qui e ora. Uno strumento prezioso per sviluppare ascolto interiore, equilibrio e resilienza.",
+    keywords: ["mindfulness", "consapevolezza", "gestione dello stress", "meditazione"]
+  },
+  {
+    title: "Ansia e Stress",
+    description: "Interventi psicologici per riconoscere, comprendere e ridurre l’impatto di ansia, attacchi di panico e stress cronico sulla vita quotidiana. Obiettivo: tornare a sentirsi al sicuro dentro di sé.",
+    keywords: ["ansia", "attacchi di panico", "stress", "autocontrollo"]
+  },
+  {
+    title: "Disturbi dell’Umore",
+    description: "Supporto psicologico per affrontare depressione, distimia e alterazioni del tono dell’umore. La terapia aiuta a ritrovare vitalità, senso e direzione.",
+    keywords: ["depressione", "distimia", "disturbi dell’umore", "tristezza profonda"]
+  },
+  {
+    title: "Sostegno alla Genitorialità",
+    description: "Spazi di confronto dedicati a mamme, papà o coppie che desiderano affrontare con maggiore consapevolezza il proprio ruolo genitoriale e la relazione con i figli. Attraverso una riflessione condivisa, accompagno i genitori in un percorso psico-educativo costruito insieme, che valorizza le risorse della famiglia e rispetta i bisogni di ciascuno.",
+    keywords: ["genitori", "relazione genitore-figlio", "educazione", "infanzia"]
+  },
+  {
+    title: "Crescita Personale",
+    description: "Percorsi dedicati a chi desidera conoscersi meglio, potenziare l’autostima, migliorare le relazioni o orientarsi in un momento di cambiamento. La terapia come spazio per fiorire.",
+    keywords: ["crescita personale", "autostima", "relazioni", "cambiamento positivo"]
+  },
+  {
+    title: "Sostegno nei Momenti di Transizione",
+    description: "Lutti, separazioni, cambi di lavoro, malattia, nuove fasi della vita. Offro uno spazio per attraversare con consapevolezza i passaggi critici dell’esistenza.",
+    keywords: ["lutto", "separazione", "transizioni", "eventi critici"]
   }
 ];
 
@@ -45,7 +60,9 @@ const ServicesSection: React.FC<SectionProps> = ({ id }) => {
           Servizi e Aree di Competenza
         </h2>
         <p className={`text-center text-lg text-${AppConfig.colors.textSecondary} mb-12 max-w-2xl mx-auto`}>
-          Offro un approccio empatico e professionale per aiutarti a navigare le sfide della vita e a coltivare il tuo benessere mentale.
+          Nel mio lavoro offro uno spazio protetto e attento in cui esplorare difficoltà, bisogni e desideri. 
+          I percorsi possono essere brevi o più strutturati, sempre costruiti su misura della persona.
+          Mi rivolgo ad adulti, adolescenti e genitori, per affrontare insieme momenti di crisi, cambiamento, crescita.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
