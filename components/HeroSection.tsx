@@ -24,7 +24,7 @@ const HeroSection: React.FC<SectionProps> = ({ id }) => {
           {AppConfig.professionalName}
         </h1>
         <p className={`text-xl md:text-2xl text-${AppConfig.colors.primary} font-semibold mb-6`}>
-          {AppConfig.profession} a Gallarate
+          {AppConfig.profession}
         </p>
         
         <p className={`brand-claim text-3xl md:text-4xl text-${AppConfig.colors.primary} my-6`}>
@@ -32,9 +32,13 @@ const HeroSection: React.FC<SectionProps> = ({ id }) => {
         </p>
 
         <p className={`max-w-2xl mx-auto text-lg text-${AppConfig.colors.textSecondary} mb-8`}>
-          Benvenuti nel mio spazio dedicato al benessere psicologico. Offro supporto e consulenza psicologica per affrontare momenti di difficoltà, migliorare la consapevolezza di sé e promuovere una crescita personale autentica. Insieme possiamo esplorare percorsi per ritrovare equilibrio e serenità.
+          Ho sempre pensato che ogni essere umano custodisca in sé un movimento profondo, a volte silenzioso, altre volte impetuoso. Un movimento fatto di emozioni, pensieri, memorie, sogni.È questo movimento interiore che mi ha spinta, anni fa, a scegliere la psicologia e che mi guida nel mio lavoro, oggi e in ogni momento.
+          Lavoro con persone che attraversano fasi di vita complesse, momenti in cui si fa fatica a capire, a scegliere, a reggere il peso di ciò che accade.Persone che sentono il bisogno di ritrovarsi, riconoscersi, vivere le trasformazioni.O semplicemente di fermarsi e tornare a respirare.
+          Nel mio studio offro uno spazio sicuro, umano, dove accogliere con rispetto ciò che c’è, senza giudizio.Credo in una terapia che non impone, ma accompagna. Che non forza, ma mostra. Che aiuta a fare pace con le parti ferite e a dare fiducia a quelle vitali.
+          Non sempre possiamo cambiare ciò che ci è accaduto ma possiamo cambiare il modo in cui lo abitiamo.
+
         </p>
-        <p className={`max-w-3xl mx-auto text-sm text-slate-500 mb-8`}>
+        <p className={`max-w-3xl mx-auto text-sm text-slate-500 mb-8 hidden`}>
           Parole chiave per trovarmi: {AppConfig.seoKeywords.join(', ')}.
         </p>
         <a
