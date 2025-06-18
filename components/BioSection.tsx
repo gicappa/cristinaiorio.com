@@ -26,8 +26,8 @@ const BioSection: React.FC<SectionProps> = ({ id }) => {
             <ul className="list-disc list-inside space-y-2 text-slate-600">              
               <li><strong>Laurea in Psicologia Clinica e di Comunità</strong> - Università degli Studi di Torino</li>
               <li><strong>Specializzazione in Psicoterapia a indirizzo psicodinamico</strong> - Istituto Alfred Adler di Milano</li>
-              <li><strong>Iscritta all’Ordine degli Psicologi della Lombardia</strong> dal 2001 - n. 03/6316</li>
-              <li><strong>Abilitata all’esercizio della psicoterapia</strong></li>
+              <li><strong>Iscritta all'Ordine degli Psicologi della Lombardia</strong> dal 2001 - n. 03/6316</li>
+              <li><strong>Abilitata all'esercizio della psicoterapia</strong></li>
               <li><strong>EMDR</strong> (Eye Movement Desensitization and Reprocessing) per il trattamento dei traumi</li>
               <li><strong>Mindfulness clinica</strong>, come strumento di consapevolezza e regolazione emotiva</li>
             </ul>
