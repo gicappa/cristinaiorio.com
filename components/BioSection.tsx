@@ -12,10 +12,10 @@ const BioSection: React.FC<SectionProps> = ({ id }) => {
 
         <div className="max-w-3xl mx-auto text-lg text-slate-700 space-y-6">
           <p>
-            Mi chiamo Cristina Iorio e sono psicologa e psicoterapeuta.Da oltre vent’anni accompagno le persone nei loro percorsi di cambiamento, crescita e consapevolezza.
+            Mi chiamo Cristina Iorio e sono psicologa e psicoterapeuta. Da oltre vent’anni accompagno le persone nei loro percorsi di cambiamento, crescita e consapevolezza.
           </p>
           <p>
-            Credo che ognuno possieda dentro di sé le risorse per affrontare anche le esperienze più complesse.Il mio compito è offrire uno spazio di ascolto autentico, accogliente, in cui sentirsi visti e riconosciuti, uno spazio dove poter esplorare la propria storia, trovare nuovi significati e ricontattare ciò che nutre e sostiene.
+            Credo che ognuno possieda dentro di sé le risorse per affrontare anche le esperienze più complesse. Il mio compito è offrire uno spazio di ascolto autentico, accogliente, in cui sentirsi visti e riconosciuti, uno spazio dove poter esplorare la propria storia, trovare nuovi significati e ricontattare ciò che nutre e sostiene.
           </p>
           <p>
             Costruisco insieme alla persona un'alleanza terapeutica basata sulla fiducia, sulla presenza e sul rispetto, cuore vivo di ogni percorso.
@@ -44,7 +44,7 @@ const BioSection: React.FC<SectionProps> = ({ id }) => {
             </ul>
           
             <p className="mt-8">
-              Oggi lavoro come <strong>libera professionista</strong> nel mio studio a Gallarate e presso il poliambulatorio Centro Baroncini di Sesto Calende.Sono attiva anche come <strong>formatrice e supervisore</strong> per operatori dei settori psico-socio-educativo.
+              Oggi lavoro come <strong>libera professionista</strong> nel mio studio a Gallarate e presso il poliambulatorio Centro Baroncini di Sesto Calende. Sono attiva anche come <strong>formatrice e supervisore</strong> per operatori dei settori psico-socio-educativo.
             </p>
             
             <h3>Uno sguardo in avanti</h3>
