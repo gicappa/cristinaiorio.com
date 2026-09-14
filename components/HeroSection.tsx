@@ -66,9 +66,6 @@ const HeroSection: React.FC<SectionProps> = ({ id }) => {
           <p>
             Lavoro con persone che attraversano fasi di vita complesse, momenti in cui si fa fatica a capire, a scegliere, a reggere il peso di ciò che accade. Persone che sentono il bisogno di ritrovarsi, riconoscersi, vivere le trasformazioni. O semplicemente di fermarsi e tornare a respirare.
           </p>
-          <p>
-            Nel mio studio offro uno spazio sicuro, umano, dove accogliere con rispetto ciò che c’è, senza giudizio. Credo in una terapia che non impone, ma accompagna. Che non forza, ma mostra. Che aiuta a fare pace con le parti ferite e a dare fiducia a quelle vitali.
-          </p>
           <p className="border-t border-brand/20 pt-6 text-center text-xl font-medium leading-relaxed text-brand">
             Non sempre possiamo cambiare ciò che ci è accaduto ma possiamo cambiare il modo in cui lo abitiamo.
           </p>
