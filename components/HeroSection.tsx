@@ -2,7 +2,7 @@
 import React from 'react';
 import { SectionProps } from '../types.js'; // Added .js extension
 import { AppConfig, mailtoHref, profilePhoto } from '../constants.js'; // Added .js extension
-import { Band } from './Section.js';
+import { Band, proseClasses } from './Section.js';
 
 /**
  * Two bands under one landmark: the portrait and headline, then the existing
@@ -59,14 +59,14 @@ const HeroSection: React.FC<SectionProps> = ({ id }) => {
       </div>
 
       <Band tone="tinted">
-        <div className="mx-auto max-w-prose space-y-6 text-slate-700">
+        <div className={`${proseClasses} space-y-6 text-slate-700`}>
           <p className="text-xl leading-relaxed">
             Ho sempre pensato che ogni essere umano custodisca in sé un movimento profondo, a volte silenzioso, altre volte impetuoso. Un movimento fatto di emozioni, pensieri, memorie, sogni. È questo movimento interiore che mi ha spinta, anni fa, a scegliere la psicologia e che mi guida nel mio lavoro, oggi e in ogni momento.
           </p>
-          <p className="text-lg leading-relaxed">
+          <p>
             Lavoro con persone che attraversano fasi di vita complesse, momenti in cui si fa fatica a capire, a scegliere, a reggere il peso di ciò che accade. Persone che sentono il bisogno di ritrovarsi, riconoscersi, vivere le trasformazioni. O semplicemente di fermarsi e tornare a respirare.
           </p>
-          <p className="text-lg leading-relaxed">
+          <p>
             Nel mio studio offro uno spazio sicuro, umano, dove accogliere con rispetto ciò che c’è, senza giudizio. Credo in una terapia che non impone, ma accompagna. Che non forza, ma mostra. Che aiuta a fare pace con le parti ferite e a dare fiducia a quelle vitali.
           </p>
           <p className="border-t border-brand/20 pt-6 text-center text-xl font-medium leading-relaxed text-brand">

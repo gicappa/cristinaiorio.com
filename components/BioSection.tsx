@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionProps } from '../types.js'; // Added .js extension
 import { AppConfig } from '../constants.js'; // Added .js extension
-import Section, { SectionHeading } from './Section.js';
+import Section, { SectionHeading, proseClasses } from './Section.js';
 
 const qualifications = [
   <><strong>Laurea in Psicologia Clinica e di Comunità</strong> - Università degli Studi di Torino</>,
@@ -28,7 +28,7 @@ const BioSection: React.FC<SectionProps> = ({ id }) => {
     <Section id={id} tone="tinted">
       <SectionHeading title="Biografia e Formazione" />
 
-      <div className="mx-auto max-w-prose space-y-6 text-lg leading-relaxed text-slate-700">
+      <div className={`${proseClasses} space-y-6 text-slate-700`}>
         <p>
           Mi chiamo Cristina Iorio e sono psicologa e psicoterapeuta. Da oltre vent’anni accompagno le persone nei loro percorsi di cambiamento, crescita e consapevolezza.
         </p>

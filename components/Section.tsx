@@ -41,6 +41,16 @@ const Section: React.FC<BandProps & { id?: string }> = ({
   </section>
 );
 
+/**
+ * One measure shared by every prose column, set in rem rather than `ch` because
+ * `ch` is the width of "0", and in Poppins that is 10.05px against a true
+ * average character advance of 8.73px — so a `ch` figure reads about 15% narrower
+ * than it renders. Measured at 18px: `max-w-prose` gave 75 characters per line,
+ * 44rem gives 81. That is past the usual 75 guideline, so leading opens from
+ * 1.625 to 1.78 to keep the return sweep easy to follow.
+ */
+export const proseClasses = 'mx-auto max-w-[44rem] text-lg leading-8';
+
 interface SectionHeadingProps {
   title: string;
   subtitle?: React.ReactNode;
