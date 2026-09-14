@@ -51,6 +51,15 @@ const Section: React.FC<BandProps & { id?: string }> = ({
  */
 export const proseClasses = 'mx-auto max-w-[44rem] text-lg leading-8';
 
+/**
+ * The page's one divider motif: a short centred hairline, used under section
+ * titles and as a beat between paragraphs. Decorative, so it stays out of the
+ * accessibility tree.
+ */
+export const BrandRule: React.FC<{ className?: string }> = ({ className = '' }) => (
+  <span aria-hidden="true" className={`mx-auto block h-px w-16 bg-brand/30 ${className}`} />
+);
+
 interface SectionHeadingProps {
   title: string;
   subtitle?: React.ReactNode;
@@ -59,7 +68,7 @@ interface SectionHeadingProps {
 export const SectionHeading: React.FC<SectionHeadingProps> = ({ title, subtitle }) => (
   <header className="mb-12 text-center">
     <h2 className="text-3xl font-bold tracking-tight text-slate-800 md:text-4xl">{title}</h2>
-    <span aria-hidden="true" className="mx-auto mt-5 block h-px w-16 bg-brand/30" />
+    <BrandRule className="mt-5" />
     {subtitle && (
       <p className="mx-auto mt-6 max-w-prose text-lg leading-relaxed text-slate-600">{subtitle}</p>
     )}
