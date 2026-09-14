@@ -29,19 +29,6 @@ const BioSection: React.FC<SectionProps> = ({ id }) => {
       <SectionHeading title="Biografia e Formazione" />
 
       <div className={`${proseClasses} space-y-6 text-slate-700`}>
-        <p>
-          Mi chiamo Cristina Iorio e sono psicologa e psicoterapeuta. Da oltre vent’anni accompagno le persone nei loro percorsi di cambiamento, crescita e consapevolezza.
-        </p>
-        <p>
-          Credo che ognuno possieda dentro di sé le risorse per affrontare anche le esperienze più complesse. Il mio compito è offrire uno spazio di ascolto autentico, accogliente, in cui sentirsi visti e riconosciuti, uno spazio dove poter esplorare la propria storia, trovare nuovi significati e ricontattare ciò che nutre e sostiene.
-        </p>
-        <p>
-          Nel mio studio offro uno spazio sicuro, umano, dove accogliere con rispetto ciò che c’è, senza giudizio. Credo in una terapia che non impone, ma accompagna. Che non forza, ma mostra. Che aiuta a fare pace con le parti ferite e a dare fiducia a quelle vitali.
-        </p>
-        <p>
-          Costruisco insieme alla persona un'alleanza terapeutica basata sulla fiducia, sulla presenza e sul rispetto, cuore vivo di ogni percorso.
-        </p>
-
         <div className="rounded-r-lg border-l-4 border-brand bg-brand-soft p-6">
           <h3 className={`${subheadingClasses} mb-4`}>Formazione e Qualifiche</h3>
           <ul className={listClasses}>
