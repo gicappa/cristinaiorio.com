@@ -13,6 +13,12 @@ export default {
     './*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
   ],
+  future: {
+    // Compile `hover:` inside `@media (hover: hover)`. Without this, tapping on a
+    // phone leaves the hover state stuck on the last element touched, which the
+    // expanding Servizi cards would show as a card that never closes again.
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     extend: {
       colors: {
