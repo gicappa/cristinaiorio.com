@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AppConfig, NavItem } from '../constants.js'; // Added .js extension
 import { MenuIcon, XIcon } from './icons.js'; // Added .js extension
 
@@ -10,36 +10,63 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Escape closes the mobile menu, so keyboard users are never trapped in it.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpen(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isOpen]);
+
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center">
-        <div className="flex justify-between items-center">
-          <div>
-            <a href="#home" className={`text-xl font-bold text-${AppConfig.colors.primary} md:text-2xl hover:text-${AppConfig.colors.primaryHover}`}>
+    <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-3">
+          <a
+            href="#home"
+            onClick={() => setIsOpen(false)}
+            className="rounded-sm leading-tight"
+          >
+            <span className="block text-xl font-bold text-brand transition-colors hover:text-brand-hover md:text-2xl">
               {AppConfig.professionalName}
-            </a>
-            <p className="text-sm text-slate-500">{AppConfig.profession}</p>
+            </span>
+            <span className="block text-sm text-slate-500">{AppConfig.profession}</span>
+          </a>
+
+          <div className="hidden md:flex md:items-center md:gap-1">
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-brand-soft hover:text-brand"
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
-          <div className="flex md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              type="button"
-              className={`text-slate-500 hover:text-${AppConfig.colors.primary} focus:outline-none focus:text-${AppConfig.colors.primary}`}
-              aria-label="toggle menu"
-            >
-              {isOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-            </button>
-          </div>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            type="button"
+            aria-label={isOpen ? 'Chiudi il menu' : 'Apri il menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-md text-slate-600 transition-colors hover:bg-slate-100 hover:text-brand md:hidden"
+          >
+            {isOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
+          </button>
         </div>
 
-        <div className={`md:flex items-center ${isOpen ? 'block' : 'hidden'} mt-4 md:mt-0`}>
-          <div className="flex flex-col md:flex-row md:mx-6">
+        <div id="mobile-menu" className={`${isOpen ? 'block' : 'hidden'} pb-3 md:hidden`}>
+          <div className="flex flex-col border-t border-slate-200 pt-2">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsOpen(false)} // Close menu on item click for mobile
-                className={`my-1 text-slate-700 hover:text-${AppConfig.colors.primary} md:mx-4 md:my-0 py-2 transition-colors duration-300 ease-in-out border-b-2 border-transparent hover:border-${AppConfig.colors.primary}`}
+                className="flex min-h-[44px] items-center rounded-md px-3 text-slate-700 transition-colors hover:bg-brand-soft hover:text-brand"
               >
                 {item.label}
               </a>

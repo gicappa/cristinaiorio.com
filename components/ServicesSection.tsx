@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { SectionProps } from '../types.js'; // Added .js extension
-import { AppConfig } from '../constants.js'; // Added .js extension
 import { CheckCircleIcon } from './icons.js'; // Added .js extension
+import Section, { SectionHeading } from './Section.js';
 
 const services = [
   {
@@ -13,7 +13,7 @@ const services = [
   {
     title: "Psicoterapia",
     description: "Interventi mirati per affrontare difficoltà più profonde e strutturate (come disturbi del comportamento alimentare e disturbi psicosomatici), con un approccio integrato e basato sull’evidenza .La psicoterapia permette di lavorare su ferite emotive, schemi disfunzionali e vissuti radicati, promuovendo un cambiamento autentico e duraturo.",
-    keywords: ["psicoterapia", "gpercorso terapeutico", "cambiamento", "consapevolezza"]
+    keywords: ["psicoterapia", "percorso terapeutico", "cambiamento", "consapevolezza"]
   },
   {
     title: "EMDR – Elaborazione dei Traumi",
@@ -52,38 +52,47 @@ const services = [
   }
 ];
 
+
 const ServicesSection: React.FC<SectionProps> = ({ id }) => {
   return (
-    <section id={id} className={`py-16 md:py-20 bg-slate-100 px-4 sm:px-6 lg:px-8`}>
-      <div className="container mx-auto">
-        <h2 className={`text-3xl md:text-4xl font-bold text-center text-${AppConfig.colors.textPrimary} mb-4`}>
-          Servizi e Aree di Competenza
-        </h2>
-        <p className={`text-center text-lg text-${AppConfig.colors.textSecondary} mb-12 max-w-2xl mx-auto`}>
-          Nel mio lavoro offro uno spazio protetto e attento in cui esplorare difficoltà, bisogni e desideri. 
-          I percorsi possono essere brevi o più strutturati, sempre costruiti su misura della persona.
-          Mi rivolgo ad adulti, adolescenti e genitori, per affrontare insieme momenti di crisi, cambiamento, crescita.
-        </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
-              <div className="flex items-center mb-4">
-                <CheckCircleIcon className={`w-8 h-8 text-${AppConfig.colors.accent} mr-3`} />
-                <h3 className={`text-xl font-semibold text-${AppConfig.colors.textPrimary}`}>{service.title}</h3>
-              </div>
-              <p className={`text-${AppConfig.colors.textSecondary} flex-grow`}>{service.description}</p>
-              <div className="mt-4">
-                {service.keywords.map(keyword => (
-                  <span key={keyword} className={`inline-block bg-${AppConfig.colors.accentBgSoft} text-${AppConfig.colors.accentTextSoft} text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full`}>
-                    {keyword}
-                  </span>
-                ))}
-              </div>
+    <Section id={id} tone="light">
+      <SectionHeading
+        title="Servizi e Aree di Competenza"
+        subtitle={
+          <>
+            Nel mio lavoro offro uno spazio protetto e attento in cui esplorare difficoltà, bisogni e desideri.
+            I percorsi possono essere brevi o più strutturati, sempre costruiti su misura della persona.
+            Mi rivolgo ad adulti, adolescenti e genitori, per affrontare insieme momenti di crisi, cambiamento, crescita.
+          </>
+        }
+      />
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((service) => (
+          <article
+            key={service.title}
+            className="flex flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md"
+          >
+            {/* items-start keeps the icon anchored to the first line when a title wraps. */}
+            <div className="mb-4 flex items-start gap-3">
+              <CheckCircleIcon className="mt-0.5 h-7 w-7 flex-none text-accent" />
+              <h3 className="text-lg font-semibold leading-snug text-slate-800">{service.title}</h3>
             </div>
-          ))}
-        </div>
+            <p className="flex-grow leading-relaxed text-slate-600">{service.description}</p>
+            {/* A wrapper gap is what keeps wrapped rows of pills from colliding. */}
+            <div className="mt-5 flex flex-wrap gap-2">
+              {service.keywords.map((keyword) => (
+                <span
+                  key={keyword}
+                  className="inline-block rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-semibold text-accent-strong"
+                >
+                  {keyword}
+                </span>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 };
 

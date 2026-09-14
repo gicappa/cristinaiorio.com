@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { SectionProps } from '../types.js'; // Added .js extension
 import { AppConfig } from '../constants.js'; // Added .js extension
-import { ChevronDownIcon, ChevronUpIcon } from './icons.js'; // Added .js extension
+import { ChevronDownIcon } from './icons.js'; // Added .js extension
+import Section, { SectionHeading } from './Section.js';
 
 interface FaqItem {
   question: string;
@@ -24,7 +25,7 @@ const faqs: FaqItem[] = [
   },
   {
     question: "Come posso prenotare un primo colloquio?",
-    answer: "Puoi contattarmi telefonicamente al numero +39 347 8035515 o inviare una richiesta tramite il modulo di contatto presente su questo sito. Sarò lieta di fornirti tutte le informazioni necessarie."
+    answer: `Puoi contattarmi telefonicamente al numero ${AppConfig.contact.phone} oppure scrivermi una email all'indirizzo ${AppConfig.contact.email}. Sarò lieta di fornirti tutte le informazioni necessarie.`
   },
   {
     question: "Cosa succede durante il primo colloquio?",
@@ -32,46 +33,52 @@ const faqs: FaqItem[] = [
   }
 ];
 
-const FaqItemComponent: React.FC<{ item: FaqItem }> = ({ item }) => {
+const FaqItemComponent: React.FC<{ item: FaqItem; index: number }> = ({ item, index }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const panelId = `faq-panel-${index}`;
+  const buttonId = `faq-button-${index}`;
 
   return (
-    <div className="border-b border-slate-200 py-4">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex justify-between items-center w-full text-left"
-        aria-expanded={isOpen}
-      >
-        <h4 className={`text-lg font-medium text-${AppConfig.colors.textPrimary}`}>{item.question}</h4>
-        {isOpen ? <ChevronUpIcon className={`w-5 h-5 text-${AppConfig.colors.primary}`} /> : <ChevronDownIcon className={`w-5 h-5 text-${AppConfig.colors.primary}`} />}
-      </button>
-      {isOpen && (
-        <div className={`mt-3 text-${AppConfig.colors.textSecondary} text-base leading-relaxed`}>
-          <p>{item.answer}</p>
-        </div>
-      )}
+    <div className="border-b border-slate-200">
+      <h3>
+        <button
+          id={buttonId}
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex min-h-[56px] w-full items-center justify-between gap-4 py-4 text-left"
+          aria-expanded={isOpen}
+          aria-controls={panelId}
+        >
+          <span className="text-lg font-medium text-slate-800">{item.question}</span>
+          {/* One rotating chevron rather than swapping two icons. */}
+          <ChevronDownIcon
+            className={`h-5 w-5 flex-none text-brand transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          />
+        </button>
+      </h3>
+      <div id={panelId} role="region" aria-labelledby={buttonId} hidden={!isOpen}>
+        <p className="pb-5 pr-8 leading-relaxed text-slate-600">{item.answer}</p>
+      </div>
     </div>
   );
 };
 
-
 const FaqSection: React.FC<SectionProps> = ({ id }) => {
   return (
-    <section id={id} className={`py-16 md:py-20 bg-white px-4 sm:px-6 lg:px-8`}>
-      <div className="container mx-auto">
-        <h2 className={`text-3xl md:text-4xl font-bold text-center text-${AppConfig.colors.textPrimary} mb-12`}>
-          Domande Frequenti (FAQ)
-        </h2>
-        <div className="max-w-3xl mx-auto">
-          {faqs.map((faq, index) => (
-            <FaqItemComponent key={index} item={faq} />
-          ))}
-        </div>
-         <p className="text-center mt-12 text-slate-500">
-          Se hai altre domande, non esitare a <a href="#contatti" className={`text-${AppConfig.colors.primary} hover:underline`}>contattarmi</a>.
-        </p>
+    <Section id={id} tone="light">
+      <SectionHeading title="Domande Frequenti (FAQ)" />
+      <div className="mx-auto max-w-3xl">
+        {faqs.map((faq, index) => (
+          <FaqItemComponent key={faq.question} item={faq} index={index} />
+        ))}
       </div>
-    </section>
+      <p className="mt-12 text-center text-slate-500">
+        Se hai altre domande, non esitare a{' '}
+        <a href="#contatti" className="font-medium text-brand hover:underline">
+          contattarmi
+        </a>
+        .
+      </p>
+    </Section>
   );
 };
 

@@ -5,19 +5,20 @@ export interface NavItem {
 }
 
 export const AppConfig = {
-  professionalName: "Cristina Iorio", 
+  professionalName: "Cristina Iorio",
   profession: "Psicologa Psicoterapeuta",
   claim: "La mente in continuo movimento",
   contact: {
     address: "Vicolo Degli Orti 2, 21013 Gallarate (VA), Italia",
     phone: "+39 347 8035515",
-    email: "cristinaiorio@tiscali.it", 
+    email: "cristinaiorio@tiscali.it",
     mapEmbedUrl: "https://maps.google.com/maps?q=Vicolo%20Degli%20Orti%202%2C%2021013%20Gallarate%20VA%2C%20Italy&t=&z=17&ie=UTF8&iwloc=&output=embed",
-    piva: "02126480025", 
+    mapLinkUrl: "https://maps.google.com/maps?q=Vicolo%20Degli%20Orti%202%2C%2021013%20Gallarate%20VA%2C%20Italy",
+    piva: "02126480025",
   },
   seoKeywords: [
-    "psicologa Gallarate", "psicoterapeuta Gallarate", "supporto psicologico", 
-    "benessere mentale", "consulenza psicologica", "terapia individuale", 
+    "psicologa Gallarate", "psicoterapeuta Gallarate", "supporto psicologico",
+    "benessere mentale", "consulenza psicologica", "terapia individuale",
     "gestione dello stress", "ansia", "depressione", "crescita personale"
   ],
   navLinks: [
@@ -27,25 +28,22 @@ export const AppConfig = {
     { label: "FAQ", href: "#faq"},
     { label: "Contatti", href: "#contatti" },
   ] as NavItem[],
-  colors: { 
-    primary: 'red-700',        
-    primaryHover: 'red-800',   
-    primaryLight: 'red-600',   
-    primaryBgSoft: 'red-50',   
-    primaryTextSoft: 'red-800',
-    
-    accent: 'amber-600',        
-    accentHover: 'amber-700',   
-    accentLight: 'amber-500',   
-    accentBgSoft: 'amber-50',   
-    accentTextSoft: 'amber-800',
-
-    textPrimary: 'slate-800',   
-    textSecondary: 'slate-600', 
-    background: 'slate-50',     
-    border: 'slate-300',        
-  }
 };
 
-// IMPORTANT: Ensure the image file 'cristina_iorio_profile.jpg' is placed in the root deployment directory.
-export const PlaceholderImageFemaleProfessional = "./cristina_iorio_profile.jpg"; // Path updated to be relative
+/** Opens the visitor's mail client with the subject already filled in. */
+export const mailtoHref =
+  `mailto:${AppConfig.contact.email}` +
+  `?subject=${encodeURIComponent('Richiesta informazioni')}`;
+
+/** Strips the display spacing so the number is dialable from a phone. */
+export const telHref = `tel:${AppConfig.contact.phone.replace(/\s/g, '')}`;
+
+/**
+ * Square derivatives of the portrait, served from the deploy root. The 3988px
+ * original lives in `assets-src/` so it is never shipped to visitors: it is
+ * 7.3MB, which no phone should download to fill a 300px frame.
+ */
+export const profilePhoto = {
+  large: "./cristina_iorio_profile.jpg", // 1024x1024
+  small: "./cristina_iorio_profile-512.jpg", // 512x512
+};
