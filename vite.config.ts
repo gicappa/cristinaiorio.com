@@ -14,7 +14,9 @@ export default defineConfig(({ mode }) => {
       },
       resolve: {
         alias: {
-          '@': path.resolve(__dirname, '.'),
+          // import.meta.dirname, not __dirname: this config is ESM, and Vite's
+          // native config loader cannot shim the CJS global.
+          '@': path.resolve(import.meta.dirname, '.'),
         }
       }
     };
